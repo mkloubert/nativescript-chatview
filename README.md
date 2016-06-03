@@ -82,88 +82,6 @@ export function onNavigatingTo(args) {
 }
 ```
 
-### Add messages
-
-Chat messages are wrapped into an `IChatMessage` object:
-
-```typescript
-export interface IChatMessage {
-    /**
-     * The date.
-     */
-    date?: any;
-    
-    /**
-     * The image source.
-     */
-    image?: any;
-    
-    /**
-     * Defines if the displayed item is aligned on the right side or not.
-     */
-    isRight?: boolean;
-    
-    /**
-     * The message value.
-     */
-    message?: any;
-}
-```
-
-#### Add
-
-Use `appendMessages()` method to add one or more chat messages:
-
-```typescript
-object.appendMessages({            
-    date: getTime(),
-    isRight: true,
-    image: "~/img/me.jpg",
-    message: "My message",    
-}, {            
-    date: getTime(),
-    isRight: false,
-    image: "~/img/friend.jpg",
-    message: "Friend's message",    
-});
-```
-
-#### Insert
-
-Use `insertMessages()` method to insert one or more chat messages at a specific position:
-
-```typescript
-object.insertMessages(1, {            
-    date: getTime(),
-    isRight: true,
-    image: "~/img/me.jpg",
-    message: "My message",    
-}, {            
-    date: getTime(),
-    isRight: false,
-    image: "~/img/friend.jpg",
-    message: "Friend's message",    
-});
-```
-
-#### Prepend
-
-Use `insertMessages()` method to prepend one or more chat messages:
-
-```typescript
-object.insertMessages({
-    date: getTime(),
-    isRight: true,
-    image: "~/img/me.jpg",
-    message: "My message",    
-}, {            
-    date: getTime(),
-    isRight: false,
-    image: "~/img/friend.jpg",
-    message: "Friend's message",    
-});
-```
-
 ### Styling
 
 Add the following CSS to your code:
@@ -329,3 +247,131 @@ The following properties of a `ChatView` can be used to access the controls defi
 | messageList | nsChatView-messageList |
 | sendMessageArea | nsChatView-sendMessageArea |
 | sendMessageButton | nsChatView-sendMessageButton |
+
+### Add messages
+
+Chat messages are wrapped into an `IChatMessage` object:
+
+```typescript
+export interface IChatMessage {
+    /**
+     * The date.
+     */
+    date?: any;
+    
+    /**
+     * The image source.
+     */
+    image?: any;
+    
+    /**
+     * Defines if the displayed item is aligned on the right side or not.
+     */
+    isRight?: boolean;
+    
+    /**
+     * The message value.
+     */
+    message?: any;
+}
+```
+
+#### Add
+
+Use `appendMessages()` method to add one or more chat messages:
+
+```typescript
+object.appendMessages({            
+    date: getTime(),
+    isRight: true,
+    image: "~/img/me.jpg",
+    message: "My message",    
+}, {            
+    date: getTime(),
+    isRight: false,
+    image: "~/img/friend.jpg",
+    message: "Friend's message",    
+});
+```
+
+#### Insert
+
+Use `insertMessages()` method to insert one or more chat messages at a specific position:
+
+```typescript
+object.insertMessages(1, {            
+    date: getTime(),
+    isRight: true,
+    image: "~/img/me.jpg",
+    message: "My message",    
+}, {            
+    date: getTime(),
+    isRight: false,
+    image: "~/img/friend.jpg",
+    message: "Friend's message",    
+});
+```
+
+#### Prepend
+
+Use `insertMessages()` method to prepend one or more chat messages:
+
+```typescript
+object.insertMessages({
+    date: getTime(),
+    isRight: true,
+    image: "~/img/me.jpg",
+    message: "My message",    
+}, {            
+    date: getTime(),
+    isRight: false,
+    image: "~/img/friend.jpg",
+    message: "Friend's message",    
+});
+```
+
+### SEND button
+
+Use the `notifyOnSendMessageTap()` method to register for a "click" event:
+
+```typescript
+chatView.notifyOnSendMessageTap((eventData: ChatView.SendMessageTappedEventData) => {
+    // handle the event
+});
+```
+
+The `eventData` object has the following structure:
+
+```typescript
+import Observable = require("data/observable");
+
+export class SendMessageTappedEventData implements Observable.EventData {
+    /** @inheritdoc */
+    public eventName: string;
+    
+    /**
+     * Focuses the chat message field.
+     * 
+     * @return {Boolean} Operation was successful or not.
+     */
+    public focusTextField(): boolean;
+    
+    /**
+     * Gets the message to send.
+     */
+    public get message(): string;
+    
+    /** @inheritdoc */
+    public object: ChatView;
+    
+    /**
+     * Resets the message value.
+     */
+    public resetMessage();
+    
+    /**
+     * Scrolls to bottom.
+     */
+    public scrollToBottom();
+}
+```
