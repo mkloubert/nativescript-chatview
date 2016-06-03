@@ -40,6 +40,12 @@ import ChatView = require("nativescript-chatview");
 
 ### Create
 
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      navigatingTo="onNavigatingTo">
+</Page>
+```
+
 ```typescript
 import {ChatView} from "nativescript-chatview";
 
