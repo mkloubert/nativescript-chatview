@@ -5,6 +5,8 @@
 
 A [NativeScript](https://nativescript.org/) UI module for implementing WhatsApp like chat applications.
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SSS259WRLTWU2)
+
 ## License
 
 [MIT license](https://raw.githubusercontent.com/mkloubert/nativescript-chatview/master/LICENSE)
@@ -359,7 +361,7 @@ export class SendMessageTappedEventData implements Observable.EventData {
     /**
      * Gets the message to send.
      */
-    public get message(): string;
+    public message: string;
     
     /** @inheritdoc */
     public object: ChatView;
