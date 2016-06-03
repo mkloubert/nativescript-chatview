@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:chatView="nativescript-chatview"
+      navigatingTo="onNavigatingTo">
+      
+  <Page.actionBar>
+    <ActionBar title="nativescript-chatview Demo">
+    </ActionBar>
+  </Page.actionBar>
+</Page>

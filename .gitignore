@@ -1,0 +1,6 @@
+/pushall.sh
+/demo/node_modules
+/demo/platforms
+/plugin/chat-view-common.js.map
+/demo/app/*.map
+/plugin/*.map
