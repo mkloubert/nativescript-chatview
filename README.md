@@ -84,6 +84,17 @@ export function onNavigatingTo(args) {
 }
 ```
 
+#### The XML way
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:chatView="nativescript-chatview"
+      navigatingTo="onNavigatingTo">
+      
+  <chatView:ChatView id="myChatView" />
+</Page>
+```
+
 ### Styling
 
 Add the following CSS to your code:
