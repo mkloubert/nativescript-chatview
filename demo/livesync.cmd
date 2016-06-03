@@ -14,6 +14,4 @@ CD demo
 
 CALL tns plugin add ..\plugin
 
-CALL tns prepare android
-CALL tns build android
 CALL tns livesync --watch
