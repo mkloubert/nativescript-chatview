@@ -330,7 +330,7 @@ object.insertMessages(1, {
 Use `insertMessages()` method to prepend one or more chat messages:
 
 ```typescript
-object.insertMessages({
+object.prependMessages({
     date: getTime(),
     isRight: true,
     image: "~/img/me.jpg",
