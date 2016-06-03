@@ -247,7 +247,7 @@ Add the following CSS to your code:
 }
 ```
 
-To get an idea on how a `ChatView` is defined, you can have a look at the following XML definition:
+To understand how a `ChatView` is defined, you can have a look at the following XML definition:
 
 ```xml
 <ChatView className="nsChatView-view"
