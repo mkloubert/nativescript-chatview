@@ -84,7 +84,7 @@ export function onNavigatingTo(args) {
 
 ### Add messages
 
-To add chat message, you have to wrap the data into an `IChatMessage` object:
+Chat messages are wrapped into an `IChatMessage` object:
 
 ```typescript
 export interface IChatMessage {
