@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "nativescript-chatview": "file:..\\plugin",
-    "nativescript-dev-typescript": "^0.3.2",
     "tns-core-modules": "2.0.1"
   },
   "devDependencies": {
+    "nativescript-dev-typescript": "^0.3.2",    
     "typescript": "^1.8.10"
   }
 }
